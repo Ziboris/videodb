@@ -1,4 +1,0 @@
-*.pyc
-.git/*
-.idea/*
-/videodb/__pycache__/*

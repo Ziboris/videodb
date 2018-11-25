@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+
+{#    <link rel="stylesheet" href="../../app01/static/css/video-js.min.css">#}
+{#    <script src="../../app01/static/js/video.min.js"></script>#}
+{#    <script src="../../app01/static/js/videojs-ie8.min.js"></script>#}
+    <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <!-- 屏幕适配pc,移动端不缩放 -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title></title>
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    {% load static %}
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index2.css' %}"media="all">
+
+</head>
+<body>
+
+{#<video class="content" controls loop onmouseover="this.play()" onmouseout="this.pause()"#}
+{#                           width="300px"#}
+{#                           height="170px">#}
+{#    <source src="../videos/1.mp4" type="video/mp4">#}
+{#</video>#}
+{#{% load staticfiles %}#}
+{#<img src="{% static 'pic/1.jpg' %}">#}
+<div class="navbar navbar-inverse navbar-static-top">
+		<div class="container"> <!-- 容器-->
+			<div class="navbar-header"><!-- 放logo和右边切换按钮-->
+				<!-- 小图标切换效果：-->
+				<button class="navbar-toggle" data-toggle = "collapse" data-target = "#use_menu">
+		  			<span class="icon-bar"> </span>
+		  			<span class="icon-bar"></span>
+		  			<span class="icon-bar"></span>
+		  		</button>
+				<a href="#" class="navbar-brand"><img src="{% static 'image/logo.png' %}" alt=""></a>
+			</div>
+ 			<div class="collapse navbar-collapse" id="use_menu">
+				<ul class="nav navbar-nav hidden-sm navbar-right "><!-- 导航文字-->
+					<li><a href="{% url 'index'%}">首页</a></li>
+					<li><a href="{% url 'autoEdit'%}">自动剪辑</a></li>
+					<li><a href="{% url 'tag' %}">视频参数</a></li>
+					<li><a href="{% url 'contactus' %}">联系我们</a></li>
+				</ul>
+ 			</div>
+		</div>
+	</div>
+
+
+            <video id="my-video" class="video-js" controls preload="auto" width="300" height="170"
+                    data-setup="{}">
+                 {% load staticfiles %}
+                  <source src='{% static name %}' type='video/mp4'>
+                    <p class="vjs-no-js">
+                      To view this video please enable JavaScript, and consider upgrading to a web browser that
+                      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                  </p>
+            </video>
+
+
+
+<p>产品类型:
+    {% if video_tag.productCategory == 0 %} 女装
+    {% elif video_tag.productCategory == 1 %} 男装
+    {% endif %}
+    ---
+    主体运动变化：
+        {% if video.speedArg == 1 %} 大
+        {% else %} 小
+        {% endif %}
+</p>
+<p>视频载体:
+{% if video_tag.container == 0 %} 手机
+    {% elif video_tag.productCategory == 1 %} 电视
+    {% endif %}
+    ---
+    主体位置变化：
+        {% if video.positionArg == 1 %} 大
+        {% else %} 小
+        {% endif %}
+</p>
+<p>业务类型:
+{% if video_tag.scenes == 0 %} 商品上新
+    {% elif video_tag.scenes == 1 %} 促销
+    {% elif video_tag.scenes == 2 %} 品牌宣传
+    {% endif %}
+    ---
+    主体位置变化：
+        {% if video.cramArg == 1 %} 大
+        {% else %} 小
+        {% endif %}
+</p>
+<p>视频时长: {{ video_length }}
+---
+    画面色调变化：
+    {% if video.colorArg == 1 %} 大
+        {% else %} 小
+        {% endif %}
+
+</p>
+<p>​镜头数: {{ shot_num }}---
+是否跳剪：
+    {% if video.jumpArg == 1 %} 是
+        {% else %} 否
+        {% endif %}
+</p>
+
+
+</body>
+</html>

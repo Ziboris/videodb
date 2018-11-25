@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+</head>
+<body>
+
+分页
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'index' %}">返回首页</a>
+    <form class="form-inline" action="{% url '#' %}">
+        <input class="form-control mr-sm-2" type="search" placeholder="search" name="video" aria-label="Search">
+        <button type="submit" class="btn btn-outline-info my-2 my-sm-0">Search</button>
+    </form>
+</nav>
+</body>
+</html>

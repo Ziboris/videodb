@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+
+	<!-- 屏幕适配pc,移动端不缩放 -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title></title>
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    {% load static %}
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{#	<link rel="stylesheet" type="text/css" href="D:\index2.css"media="all">#}
+
+    <style>
+        body{
+  font-family: "Microsoft Yahei";
+  background-color:#231f1f;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding:3px 100px;
+    font-size: 18px;
+    line-height: 20px;
+
+}
+
+
+
+.navbar-inverse {
+    background-color: #fff;
+    border-color: #504f4f;
+    border-bottom-width: 5px;
+    padding-top: 20px;
+    height: 70px;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #000;
+    margin-right: 60px;
+    padding-right: 5px;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: rgb(138, 138, 141);
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #333;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fff;
+}
+.h1, h1 {
+    font-size: 40px;
+    color: white;
+}
+
+.h10, h10 {
+    font-size: 80px;
+    color: white;
+}
+
+
+.h4, h4 {
+    color: #9B9B9B;
+}
+.input-group{
+	padding-top: 10px;
+}
+.input-group .form-control{
+   background-color:#504f4f;
+   border:0px;
+}
+.mask{
+    position:fixed;
+    top     : 0;
+    left    : 0;
+    bottom  : 0;
+    right   : 0;
+    background:rgba(0,0,0,.3);
+    /*background:hsla(0,100%,80%,0.5)*/
+    /*background:#000;  */
+	opacity:0.5;
+}
+.input-group .btn{
+   background-color: #504f4f;
+   border:1px solid #504f4f;
+}
+.container {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container {
+  width: 1000px;
+}
+.col-md-12 .col-md-4 .aa:hover{
+
+    opacity: 0.5;
+}
+
+
+
+
+.button {
+    color: #FC0818;
+    background-color: #231F1F;
+    border-color: #F50818;
+    height: 35px;
+    width: 170px;
+
+  }
+
+
+
+  .button:hover,
+  .button:focus,
+  .button:active,
+  .button.active,
+  .open .dropdown-toggle.button {
+    color: white;
+    background-color: #7A2427;
+    border-color: #F50818;
+  }
+
+  .button:active,
+  .button.active,
+  .open .dropdown-toggle.button {
+    background-image: none;
+  }
+
+  .button.disabled,
+  .button[disabled],
+  fieldset[disabled] .button,
+  .button.disabled:hover,
+  .button[disabled]:hover,
+  fieldset[disabled] .button:hover,
+  .button.disabled:focus,
+  .button[disabled]:focus,
+  fieldset[disabled] .button:focus,
+  .button.disabled:active,
+  .button[disabled]:active,
+  fieldset[disabled] .button:active,
+  .button.disabled.active,
+  .button[disabled].active,
+  fieldset[disabled] .button.active {
+    background-color: #231F1F;
+    border-color: #F50818;
+  }
+
+  .button .badge {
+    color: #231F1F;
+    background-color: #FC0818;
+  }
+    </style>
+</head>
+<body>
+	<!-- 导航栏-->
+
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="container"> <!-- 容器-->
+			<div class="navbar-header"><!-- 放logo和右边切换按钮-->
+				<!-- 小图标切换效果：-->
+				<button class="navbar-toggle" data-toggle = "collapse" data-target = "#use_menu">
+		  			<span class="icon-bar"> </span>
+		  			<span class="icon-bar"></span>
+		  			<span class="icon-bar"></span>
+		  		</button>
+                <a href="#" class="navbar-brand"><img src="{% static 'image/logo.png' %}" alt=""></a>
+
+			</div>
+
+			<div class="collapse navbar-collapse" id="use_menu">
+				<ul class="nav navbar-nav hidden-sm navbar-right "><!-- 导航文字-->
+					<li><a href="{% url 'index'%}" >首页</a></li>
+					<li><a href="{% url 'autoEdit'%}">自动剪辑</a></li>
+					<li><a href="{% url 'tag' %}">打标平台</a></li>
+					<li><a href="{% url 'contactus' %}" style="color:red">联系我们</a></li>
+				</ul>
+
+
+			</div>
+		</div>
+
+    </div>
+
+
+    <div class="container">
+        <h1>&nbsp&nbsp&nbsp&nbsp</h1>
+    </div>
+
+    <div class="container">
+       <h5 class="text-center" style=" font-size: 80px;color: white">联系我们</h5>
+    </div>
+
+    <div class="container">
+        <h2>&nbsp</h2>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h2 class="text-center" style="color: white">管理员</h2>
+                <h5 class="text-center" style="color: white">Email: info@mysite.com</h5>
+                <h5 class="text-center" style="color: white">Tel: 123-456-7890</h5>
+            </div>
+
+            <div  class="col-sm-1">
+                <img src="D:\1.png" alt="">
+            </div>
+
+            <div class="col-sm-2">
+                <h2 class="text-center" style="color: white">IDEA LAB</h2>
+                <h5 class="text-center" style="color: white">Email: info@mysite.com</h5>
+                <h5 class="text-center" style="color: white">Tel: 123-456-7890</h5>
+            </div>
+
+            <div  class="col-sm-1">
+
+            </div>
+
+            <div  class="col-sm-1">
+                <img src="D:\1.png" alt="">
+            </div>
+
+            <div class="col-sm-3">
+                <h2 class="text-center" style="color: white">AZFT</h2>
+                <h5 class="text-center" style="color: white">Email: info@mysite.com</h5>
+                <h5 class="text-center" style="color: white">Tel: 123-456-7890</h5>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>&nbsp</h1>
+        <h1>&nbsp</h1>
+        <h1>&nbsp</h1>
+        <h1>&nbsp</h1>
+        <h1>&nbsp</h1>
+        <h1>&nbsp</h1>
+    </div>
+
+    <div class="container">
+        <h4 class="text-left">© 2018 by IDEA LAB</h4>
+    </div>
+
+
+</body>
+</html>
