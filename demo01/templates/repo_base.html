@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告视频库</title>
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+        .head{
+            line-height: 40px;
+            width:100%;
+            background-color: black;
+            color:white;
+            font-size: 25px;
+            text-align: left;
+        }
+        .nav_left{
+            width: 20%;
+            min-height: 600px;
+            overflow: auto;
+            background-color: #757575;
+            font-size: 25px;
+            color: white;
+            text-align: center;
+        }
+        .MS{
+            text-align: left;
+            padding: 20px 0px;
+            margin: 20px 10px;
+            font-size: 20px;
+            color: coral;
+        }
+        .nav_left {
+            float: left;
+        }
+        .back{
+            color: white;
+            text-align: right;
+            font-size: medium;
+        }
+        .content{
+            float: right;
+            width:70%;
+            min-height: 600px;
+            margin:40px 40px;
+            padding:20px 0px;
+        }
+        a{
+           text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="outer">
+
+    <div class="head">
+        <table border="1px" width="100%">
+            <tr height="50px">
+                <td width="80%">
+                   广告视频库
+                </td>
+                <td width="20%">
+                    <a href="{% url 'index' %}">
+                        <div class="back">返回主页</div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="nav_left">
+        <div class="type MS"><a href="{% url 'repo_type' %}">产品类型</a></div>
+        <div class="style MS"><a href="{% url 'repo_style' %}">产品风格</a></div>
+        <div class="business MS"><a href="{% url 'repo_business' %}">业务导向</a></div>
+        <div class="media MS"><a href="{% url 'repo_media' %}">传播载体</a></div>
+        <div class="year MS"><a href="{% url 'repo_year' %}">年份</a></div>
+        <div class="consumer MS"><a href="{% url 'repo_consumer' %}">消费群体</a></div>
+    </div>
+
+
+    <div class="content">
+{#        <p>1.搜索功能还没完成</p>#}
+{#        <p>2.列出来的都可以链接到具体的视频参数内容 没完成</p>#}
+        <br>
+
+        <div class="search">
+            <form action="{% url 'repo_base' %}" method="post">
+                <p><input type="text" name="search">
+                <input type="submit" ></p>
+                {% csrf_token %}
+            </form>
+        </div>
+        {% if flag == True %}
+
+        {% endif %}
+        {% block content %}
+            <ul>
+                {% for video in video_list %}
+                    <li>{{ video.case_id }}-{{ video.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endblock %}
+
+        <a href="{% url 'case_change' %}">点这里.avi</a>
+    </div>
+
+
+
+
+</div>
+
+</body>
+</html>

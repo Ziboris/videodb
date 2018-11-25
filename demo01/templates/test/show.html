@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>showVideos</title>
+</head>
+<body>
+分页1：页码使用
+{% for video in videos %}
+    {#  each video is a model object #}
+    {{ video.full_name|upper }}<br/>
+    111
+{%  endfor %}
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if videos.has_previous %}
+                <a href="?page={{ videos.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ videos.number }} of {{ videos.paginator.num_pages }}.
+            </span>
+
+            {% if videos.has_next %}
+                <a href="?page={{ videos.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+
+</body>
+</html>

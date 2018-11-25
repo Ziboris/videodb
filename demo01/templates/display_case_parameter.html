@@ -1,0 +1,82 @@
+{% extends 'parameter_base.html' %}
+
+{% block style %}
+{% endblock %}
+
+
+
+{% block shot %}
+    <div class="start_shot">
+        <table order="1" width="600px">
+            <tr>
+                <th>首镜头</th>
+                <th>主体运动状态</th>
+                <th>主体位置</th>
+                <th>镜头运动状态</th>
+                <th>色调</th>
+                <th>景别</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>级别：{{ startShot.speed }}</th>
+                <th>级别：{{ startShot.position }}</th>
+                <th>级别：{{ startShot.craMotion }}</th>
+                <th>级别：{{ startShot.color }}</th>
+                <th>级别：{{ startShot.shotSize }}</th>
+            </tr>
+        </table>
+    </div>
+    <div class="end_shot">
+        <table order="1" width="600px">
+            <tr>
+                <th>尾镜头</th>
+                <th>主体运动状态</th>
+                <th>主体位置</th>
+                <th>镜头运动状态</th>
+                <th>色调</th>
+                <th>景别</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>级别：{{ endShot.speed }}</th>
+                <th>级别：{{ endShot.position }}</th>
+                <th>级别：{{ endShot.craMotion }}</th>
+                <th>级别：{{ endShot.color }}</th>
+                <th>级别：{{ endShot.shotSize }}</th>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
+
+{% block video %}
+    <div class="jump">
+        画面景别变化幅度：
+        {% if editedVideo.jumpArg == 1 %} 大
+        {% else %} 小
+        {% endif %}
+    </div>
+    <div class="speed">
+        主体位置变化幅度：
+        {% if editedVideo.speedArg == 1 %} 大
+        {% else %} 小
+        {% endif %}
+    </div>
+    <div class="position">
+        主体运动变化幅度：
+        {% if editedVideo.position == 1 %} 大
+        {% else %} 小
+        {% endif %}
+    </div>
+    <div class="cram">
+        镜头运动变化幅度：
+        {% if editedVideo.cramArg == 1 %} 大
+        {% else %} 小
+        {% endif %}
+    </div>
+    <div class="color">
+        画面色调变化幅度：
+        {% if editedVideo.colorArg == 1 %} 大
+        {% else %} 小
+        {% endif %}
+    </div>
+{% endblock %}

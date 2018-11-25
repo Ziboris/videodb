@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>参数</title>
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+        .head{
+            line-height: 40px;
+            width:100%;
+            background-color: black;
+            color:white;
+            font-size: 25px;
+            text-align: left;
+        }
+        {% block style %}
+        {% endblock %}
+    </style>
+</head>
+<body>
+
+<div class="outer">
+    <div class="head">视频自动剪辑</div>
+    <div class="line1">
+        <p>内容线(这里应该很复杂)
+            <table border="1" width="1000px">
+                <tr>
+                    <th width="20%">产品搭配</th>
+                    <th width="30%">产品外观</th>
+                    <th width="50%">产品卖点细节</th>
+                </tr>
+            </table>
+        </p>
+    </div>
+    <div class="line2">
+        <p>视频时长：15s             视频尺寸：1280*720</p>
+    </div>
+    <div class="line3">
+        <div class="video_shot">
+            <div class="shot">
+                {% block shot %}
+                {% endblock %}
+            </div>
+            <div class="video">
+                {% block video %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="beginEdit">
+            <form action="{% url 'parameter' %}" method="post">
+                <input type="submit" value="开始自动剪辑">
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频自动剪辑</title>
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+        .head{
+            line-height: 40px;
+            width:100%;
+            background-color: black;
+            color:white;
+            font-size: 25px;
+            text-align: left;
+        }
+        .back{
+            color: white;
+            text-align: right;
+            font-size: medium;
+        }
+        .left{
+            float: left;
+            width: 70%;
+        }
+        .right{
+            float: right;
+            {#width:30%;#}
+            padding:400px 200px 100px 100px;
+        }
+        .next{
+            line-height: 40px;
+            width: 100px;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="outer">
+    <div class="head">
+        <table border="1px" width="100%">
+            <tr height="50px">
+                <td width="80%">
+                   视频数据分析
+                </td>
+                <td width="20%">
+                    <a href="{% url 'index' %}">
+                        <div class="back">返回主页</div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="left">
+        <div class="upload">
+            <form action="{% url 'upload_material' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="fileUpload">
+                <input type="hidden" name="caseName" value={{ case.0.name }}>
+                <input type="submit" value="上传">
+            </form>
+        </div>
+        <div class="display">
+{#            （???选择两次 这里不存在了 待解决）#}
+            <p>所选择的的案例模板：{{ caseName }} </p>
+            <p>所需选择的分析材料：{{ materialName }}</p>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="next">
+            <form action="{% url 'parameter' %}" method="get">
+                <input type="hidden" name="caseName" value={{ caseName }} />
+                <input type="hidden" name="materialName" value={{ materialName }} />
+                <input type="submit" value="下一步">
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

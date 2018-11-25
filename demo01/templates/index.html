@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>广告视频智能设计</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .head{
+            line-height: 40px;
+            background-color: black;
+            color: white;
+        }
+        .mybottom{
+            background-color: black;
+            width: 150px;
+            color: white;
+            text-align: center;
+            margin: 60px 40%;
+            padding: 20px 10px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="head">广告视频智能设计</div>
+
+        <div class="mybottom" id="videoRepo">
+            <a href="{% url 'repo_base' %}" >视频数据库</a>
+        </div>
+        <div class="mybottom" id="videoAnalyzing">
+            <a href="{% url 'show' %}"  >视频分析</a>
+        </div>
+        <div class="mybottom" id="videoEdit">
+            <a href="#" >视频自动剪辑</a>
+        </div>
+
+        <div class="mybottom" id="test1">
+            <a href="{% url 'test1' %}" >test1</a>
+        </div>
+        <div class="mybottom" id="test2">
+            <a href="#" >test2</a>
+        </div>
+        <div class="mybottom" id="test3">
+            <a href="#" >test3</a>
+        </div>
+    </div>
+
+</body>
+</html>

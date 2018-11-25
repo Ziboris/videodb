@@ -1,0 +1,16 @@
+{% extends "repo_base.html" %}
+
+{% block content %}
+    视频年份-名称：
+    <ul>
+        {% for video1 in video_list %}
+{#            {% if video.product_type == 1 %}#}
+{#            {% endif %}#}
+            {% for video2 in video_list2 %}
+                {% if video1.case_id == video2.case_id %}
+                    <li>{{ video1.year }}-{{ video2.name }}</li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endblock %}

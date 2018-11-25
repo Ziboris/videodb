@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频数据分析</title>
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+        .head{
+            line-height: 40px;
+            width:100%;
+            background-color: black;
+            color:white;
+            font-size: 25px;
+            text-align: left;
+        }
+        .back{
+            color: white;
+            text-align: right;
+            font-size: medium;
+        }
+        .page_left{
+            float: left;
+            width: 400px;
+        }
+        .line_center{
+            float:left;
+            border-right: 1px solid black;
+            padding-bottom:1600px;
+	        margin-bottom:-1600px;
+        }
+        .page_right{
+            float: left;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="outer">
+    <div class="head">
+        <table border="1px" width="100%">
+            <tr height="50px">
+                <td width="80%">
+                   视频数据分析
+                </td>
+                <td width="20%">
+                    <a href="{% url 'index' %}">
+                        <div class="back">返回主页</div>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="page_left">
+        <img src="pic/1.jpg" >
+        <div class="auto_editing">
+{#            ???怎么将{ {  } }的内容传给a href 不用表单怎么向后台传递从后台来的数据#}
+            <form action="{% url 'upload_material' %}" method="get">
+                <input type="hidden" name="id" value={{ videoId }} />
+{#                <input type="hidden" name="testname" value="ziboris" />#}
+                <input type="submit" value="视频自动剪辑">
+            </form>
+{#            <a href="{% url 'upload_material' %}?id=1" >视频自动剪辑</a>#}
+        </div>
+    </div>
+    <div class="line_center"></div>
+    <div class="page_right">
+        <p>视频时长：15s  数据库多一个这个字段？</p>
+        <p>视频尺寸：1280*720   数据库多一个这个字段？</p>
+
+    <br><br>
+        <div class="change" id="viewField">
+            画面景别变化：
+            {% for shot in shot_list %}
+                第{{ forloop.counter }}个的参数是{{ shot.speed }}
+            {% endfor %}
+        </div><br>
+        <div class="change" id="mainpart">主体位置变化
+            {% for shot in shot_list %}
+                第{{ forloop.counter }}个的参数是{{ shot.position }}
+            {% endfor %}
+        </div><br>
+        <div class="change" id="shotMotion">镜头运动变化
+            {% for shot in shot_list %}
+                第{{ forloop.counter }}个的参数是{{ shot.craMotion }}
+            {% endfor %}
+        </div><br>
+        <div class="change" id="mainMotion">主体运动变化
+            {% for shot in shot_list %}
+                第{{ forloop.counter }}个的参数是{{ shot.color }}
+            {% endfor %}
+        </div><br>
+        <div class="change" id="color">画面色调变化
+            {% for shot in shot_list %}
+                第{{ forloop.counter }}个的参数是{{ shot.shotSize }}
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

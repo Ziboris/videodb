@@ -1,0 +1,253 @@
+/*标题样式*/
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding:3px 100px;
+    font-size: 18px;
+    line-height: 20px;
+
+}
+.navbar-inverse {
+    background-color: #fff;  
+    border-color: #504f4f;
+    border-bottom-width: 5px;
+    padding-top: 20px;
+    height: 70px;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #000;
+    margin-right: 60px;
+    padding-right: 5px;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: blue;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #333;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fff;
+}
+
+
+/*加背景*/
+body {
+	background-color: #333232;
+	font-family: "Microsoft Yahei";
+}
+
+
+/*两边留空*/
+.container {
+	padding: 0px 25px 0px;
+	width: 1000px;
+}
+/*标题样式*/
+h3 {
+	color: #fff;
+	padding-bottom: 5px;
+}
+
+/*栅格样式*/
+.content div[class*='col-xs'] {
+	border: 0px solid #000;
+	color: #BABABA;
+	font-size: 18px;
+	background-color: #3D3C3C;
+	padding-left: 8px;
+	padding-top: 10px;
+}
+
+
+/*下拉菜单样式*/
+.container select {
+	background-color: #585858;
+	width: 100px;
+	font-size: 14px;
+}
+
+.container input {
+	display: inline-block;
+}
+
+/*列表样式*/
+.container ul {
+	font-size: 14px;
+	list-style-type: none;
+	display: block;
+	height: 20px;
+	line-height: 40px;
+}
+
+/*滑动条样式*/
+
+.myslider {
+  margin-top: 20px;
+	margin-left: 40px;
+  width: 900px;
+}
+.c-1-color { background: #F36464; }
+.c-2-color { background: #F66E0D; }
+.c-3-color { background: #DDB120; }
+
+.contentImg {
+  
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+/*按钮样式1*/
+
+.btn-shen_2 { 
+  color: #BABABA; 
+  background-color: #585858; 
+  border-color: #3D3C3C; 
+  width: 56px;
+} 
+ 
+.btn-shen_2:hover, 
+.btn-shen_2:focus, 
+.btn-shen_2:active, 
+.btn-shen_2.active, 
+.open .dropdown-toggle.btn-shen_2 { 
+  color: #fff; 
+  background-color: #585858; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-shen_2:active, 
+.btn-shen_2.active, 
+.open .dropdown-toggle.btn-shen_2 { 
+  background-image: none; 
+} 
+ 
+.btn-shen_2.disabled, 
+.btn-shen_2[disabled], 
+fieldset[disabled] .btn-shen_2, 
+.btn-shen_2.disabled:hover, 
+.btn-shen_2[disabled]:hover, 
+fieldset[disabled] .btn-shen_2:hover, 
+.btn-shen_2.disabled:focus, 
+.btn-shen_2[disabled]:focus, 
+fieldset[disabled] .btn-shen_2:focus, 
+.btn-shen_2.disabled:active, 
+.btn-shen_2[disabled]:active, 
+fieldset[disabled] .btn-shen_2:active, 
+.btn-shen_2.disabled.active, 
+.btn-shen_2[disabled].active, 
+fieldset[disabled] .btn-shen_2.active { 
+  background-color: #585858; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-shen_2 .badge { 
+  color: #585858; 
+  background-color: #BABABA; 
+}
+
+/*按钮样式2*/
+
+.btn-shen_3 { 
+  color: #BABABA; 
+  background-color: #585858; 
+  border-color: #3D3C3C; 
+  width: 45px;
+} 
+ 
+.btn-shen_3:hover, 
+.btn-shen_3:focus, 
+.btn-shen_3:active, 
+.btn-shen_3.active, 
+.open .dropdown-toggle.btn-shen_3 { 
+  color: #fff; 
+  background-color: #585858; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-shen_3:active, 
+.btn-shen_3.active, 
+.open .dropdown-toggle.btn-shen_3 { 
+  background-image: none; 
+} 
+ 
+.btn-shen_3.disabled, 
+.btn-shen_3[disabled], 
+fieldset[disabled] .btn-shen_3, 
+.btn-shen_3.disabled:hover, 
+.btn-shen_3[disabled]:hover, 
+fieldset[disabled] .btn-shen_3:hover, 
+.btn-shen_3.disabled:focus, 
+.btn-shen_3[disabled]:focus, 
+fieldset[disabled] .btn-shen_3:focus, 
+.btn-shen_3.disabled:active, 
+.btn-shen_3[disabled]:active, 
+fieldset[disabled] .btn-shen_3:active, 
+.btn-shen_3.disabled.active, 
+.btn-shen_3[disabled].active, 
+fieldset[disabled] .btn-shen_3.active { 
+  background-color: #585858; 
+  border-color: #FFFFFF; 
+} 
+ 
+.btn-shen_3 .badge { 
+  color: #585858; 
+  background-color: #BABABA; 
+}
+
+/*按钮样式3*/
+
+.btn-red { 
+  color: #F25C5C; 
+  background-color: #333232; 
+  border: 2px solid #F25C5C;
+  width: 200px;
+  height: 40px;
+  font-size: 18px;
+} 
+ 
+.btn-red:hover, 
+.btn-red:focus, 
+.btn-red:active, 
+.btn-red.active, 
+.open .dropdown-toggle.btn-red { 
+  color: #F25C5C; 
+  background-color: #F25C5C; 
+  border: 2px solid #F25C5C;
+  color: #fff;
+} 
+ 
+.btn-red:active, 
+.btn-red.active, 
+.open .dropdown-toggle.btn-red { 
+  background-image: none; 
+} 
+ 
+.btn-red.disabled, 
+.btn-red[disabled], 
+fieldset[disabled] .btn-red, 
+.btn-red.disabled:hover, 
+.btn-red[disabled]:hover, 
+fieldset[disabled] .btn-red:hover, 
+.btn-red.disabled:focus, 
+.btn-red[disabled]:focus, 
+fieldset[disabled] .btn-red:focus, 
+.btn-red.disabled:active, 
+.btn-red[disabled]:active, 
+fieldset[disabled] .btn-red:active, 
+.btn-red.disabled.active, 
+.btn-red[disabled].active, 
+fieldset[disabled] .btn-red.active { 
+  background-color: #333232; 
+  border-color: #F25C5C; 
+} 
+ 
+.btn-red .badge { 
+  color: #333232; 
+  background-color: #F25C5C; 
+}
+
+/*脚注样式*/
+.footnote {
+	color: #6B6B6B;
+}
